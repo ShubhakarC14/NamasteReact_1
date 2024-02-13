@@ -1,68 +1,4 @@
-import React from "react";
-import ReactDOM from "react-dom/client";
-
-const Header = () => {
-  return (
-    <div className="header">
-      <div className="logo-container">
-        <img
-          className="logo"
-          src="https://www.logodesign.net/logo/smoking-burger-with-lettuce-3624ld.png?size=2"
-        />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About Us</li>
-          <li>Contact Us</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
-const styleCard = {
-  backgroundColor: "#f1f0f6",
-  textAlign: "center",
-};
-
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="restaurant-container">
-        {resList.map((restaurant) => (
-          <RestaurantCard key={restaurant.info.id} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
-const RestaurantCard = (props) => {
-  const { resData } = props;
-  const { cloudinaryImageId, name, areaName, cuisines, avgRating, costForTwo } =
-    resData?.info;
-  const { slaString } = resData?.info.sla;
-  return (
-    <div className="restaurant-card">
-      <img
-        className="restaurant-img"
-        src={
-          "https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/" +
-          cloudinaryImageId
-        }
-      />
-      <h3>{name}</h3>
-      <h4>{cuisines.join(" ,")}</h4>
-      <h4>{avgRating}</h4>
-      <h4>{areaName}</h4>
-      <h4>{costForTwo}</h4>
-      <h4>{slaString}</h4>
-      <h4></h4>
-    </div>
-  );
-};
-const resList = [
+export const resList = [
   {
     info: {
       id: "426730",
@@ -766,17 +702,3 @@ const resList = [
     widgetId: "collectionV5RestaurantListWidget_SimRestoRelevance_food_seo",
   },
 ];
-const AppLayout = () => {
-  return (
-    <div className="app">
-      <Header />
-      <Body />
-    </div>
-  );
-};
-const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(<AppLayout />);
-
-//JSX (transpiled before it reaches the JS) - PARCEL - Bable
-
-// JSX => React.createElement => ReactElement - JS Object => HTMLelement(render)

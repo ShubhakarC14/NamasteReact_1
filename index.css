@@ -55,3 +55,9 @@ body {
 .body {
   background-color: #f1f2f4;
 }
+
+.filter-btn {
+  margin: 10px 0;
+  cursor: pointer;
+  padding: 5px;
+}

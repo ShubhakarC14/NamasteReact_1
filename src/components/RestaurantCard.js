@@ -9,7 +9,12 @@ const RestaurantCard = (props) => {
   const { slaString } = resData?.info?.sla;
   return (
     <div className="restaurant-card">
-      <img className="restaurant-img" src={CDN_URL + cloudinaryImageId} />
+      <img
+        className="restaurant-img"
+        src={CDN_URL + cloudinaryImageId}
+        height="150px"
+        width="150px"
+      />
       <h3>{name}</h3>
       <h6>{cuisines.join(" ,")}</h6>
       <h6>{avgRating}</h6>

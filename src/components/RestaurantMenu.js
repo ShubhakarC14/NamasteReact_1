@@ -7,21 +7,13 @@ import useRestaurantMenu from "../Utils/useRestaurantMenu";
 const RestaurantMenu = () => {
   const { resId } = useParams();
   const resInfo = useRestaurantMenu(resId);
-  // useEffect(() => {
-  //   fetchMenu();
-  // }, []);
-  // const fetchMenu = async () => {
-  //   const data = await fetch(MENU_API_URL + resId);
-  //   const json = await data.json();
-  //   console.log(json.data);
-  //   setResInfo(json.data);
-  // };
+
   if (resInfo === null) return <Shimmer />;
   console.log(resInfo);
   const { name, cuisines, costForTwoMessage, locality } =
-    resInfo?.cards[0]?.card?.card?.info;
+    resInfo?.cards[2]?.card?.card?.info;
   const { itemCards } =
-    resInfo?.cards[2]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
+    resInfo?.cards[4]?.groupedCard?.cardGroupMap?.REGULAR?.cards[1]?.card?.card;
   return (
     <div className="menu">
       <h2>{name}</h2>
